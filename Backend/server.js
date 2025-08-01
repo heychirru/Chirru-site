@@ -4,11 +4,35 @@ const nodemailer = require("nodemailer");
 require("dotenv").config();
 
 const app = express();
-app.use(cors()); // For production, use: cors({ origin: "https://your-frontend-domain" })
+app.use(cors({ origin:"https://chirru.netlify.app/"})); // For production, use: cors({ origin: "https://your-frontend-domain" })
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("Backend is running!");
+  res.send(`
+    <html>
+      <head>
+        <title>API Status</title>
+        <style>
+          body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f8f9fa;
+          }
+          h1 {
+            color: #333;
+          }
+        </style>
+      </head>
+      <body>
+        <h1>Your API is running👨‍💻, Go and Enjoy😊!</h1>
+        <style>
+      </body>
+    </html>
+  `);
 });
 
 app.post("/api/contact", async (req, res) => {
@@ -17,15 +41,15 @@ app.post("/api/contact", async (req, res) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: process.env.MAIL_USER, // set in .env
-      pass: process.env.MAIL_PASS, // set in .env
+      user: process.env.MAIL_USER, 
+      pass: process.env.MAIL_PASS, 
     },
   });
 
   try {
     await transporter.sendMail({
       from: email,
-      to: process.env.MAIL_RECEIVER, // set in .env (your receiving email)
+      to: process.env.MAIL_RECEIVER, 
       subject: `Contact from ${name}`,
       text: message,
       html: `<p><b>Name:</b> ${name}</p><p><b>Email:</b> ${email}</p><p>${message}</p>`,
