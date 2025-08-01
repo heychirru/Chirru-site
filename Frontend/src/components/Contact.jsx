@@ -1,7 +1,8 @@
+import { useState } from "react";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 
-// JavaScript function to redirect to Socile Media IDs Links
+// JavaScript function to redirect to Social Media IDs Links
 function redirectToInstagram() {
   window.open(
     "https://www.instagram.com/chir.ru_26t/?igsh=MTh3YWJ3eTY3eHNhdA==",
@@ -30,11 +31,38 @@ function redirectToTwitter() {
   window.open("https://x.com/chir_ru26", "_blank", "noopener,noreferrer");
 }
 
-    function redirectToGmail() {
-        window.open('mailto:chirru26@gmail.com', '_blank', 'noopener,noreferrer');
-    }
+function redirectToGmail() {
+  window.open('mailto:chirru26@gmail.com', '_blank', 'noopener,noreferrer');
+}
 
 const Contact = () => {
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [status, setStatus] = useState("");
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("Sending...");
+    try {
+      const res = await fetch("http://localhost:5000/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (res.ok) {
+        setStatus("Message sent!");
+        setForm({ name: "", email: "", message: "" });
+      } else {
+        setStatus("Failed to send.");
+      }
+    } catch {
+      setStatus("Failed to send.");
+    }
+  };
+
   return (
     <section id="contact" className="bg-gray-950 py-16 px-6">
       <div className="max-w-7xl mx-auto">
@@ -50,8 +78,11 @@ const Contact = () => {
               </h1>
               <h3 className="text-2xl font-semibold text-gray-300">Email</h3>
               <p className="text-gray-600 mt-2">
-                <a href="#" className="text-blue-500 hover:underline"
-                onClick={redirectToGmail}>
+                <a
+                  href="#"
+                  className="text-blue-500 hover:underline"
+                  onClick={redirectToGmail}
+                >
                   chirru26@gmail.com
                 </a>
               </p>
@@ -85,7 +116,7 @@ const Contact = () => {
             <h3 className="text-3xl font-semibold text-gray-300 mb-6">
               Get in Touch
             </h3>
-            <form action="" className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label
                   htmlFor="name"
@@ -94,10 +125,14 @@ const Contact = () => {
                   Name
                 </label>
                 <input
-                  type="Name"
-                  id="Name"
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={form.name}
+                  onChange={handleChange}
                   className="mt-1 w-full p-3 border bg-gray-950 text-gray-300 border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
                   placeholder="Your Name"
+                  required
                 />
               </div>
               <div>
@@ -105,13 +140,17 @@ const Contact = () => {
                   htmlFor="email"
                   className="block text-sm font-medium text-gray-300"
                 >
-                  email
+                  Email
                 </label>
                 <input
                   type="email"
                   id="email"
+                  name="email"
+                  value={form.email}
+                  onChange={handleChange}
                   className="mt-1 w-full p-3 border bg-gray-950 text-gray-300 border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
                   placeholder="Your Email"
+                  required
                 />
               </div>
               <div>
@@ -122,10 +161,14 @@ const Contact = () => {
                   Message
                 </label>
                 <textarea
-                  id="messsage"
+                  id="message"
+                  name="message"
                   rows={5}
+                  value={form.message}
+                  onChange={handleChange}
                   className="mt-1 w-full p-3 border bg-gray-950 text-gray-300 border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
                   placeholder="Your Message"
+                  required
                 ></textarea>
               </div>
               <button
@@ -134,6 +177,7 @@ const Contact = () => {
               >
                 Send Message
               </button>
+              {status && <p className="text-gray-300 mt-2">{status}</p>}
             </form>
           </div>
         </div>
