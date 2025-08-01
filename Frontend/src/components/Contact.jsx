@@ -44,24 +44,26 @@ const Contact = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus("Sending...");
-    try {
-      const res = await fetch("http://localhost:5000/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-      if (res.ok) {
-        setStatus("Message sent!");
-        setForm({ name: "", email: "", message: "" });
-      } else {
-        setStatus("Failed to send.");
-      }
-    } catch {
+  e.preventDefault();
+  setStatus("Sending...");
+  try {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/api/contact`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form),
+    });
+
+    if (res.ok) {
+      setStatus("Message sent!");
+      setForm({ name: "", email: "", message: "" });
+    } else {
       setStatus("Failed to send.");
     }
-  };
+  } catch {
+    setStatus("Failed to send.");
+  }
+};
+
 
   return (
     <section id="contact" className="bg-gray-950 py-16 px-6">
