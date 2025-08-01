@@ -36,35 +36,6 @@ function redirectToGmail() {
 }
 
 const Contact = () => {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [status, setStatus] = useState("");
-
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e) => {
-  e.preventDefault();
-  setStatus("Sending...");
-  try {
-    const res = await fetch(`${import.meta.env.VITE_API_URL}/api/contact`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
-    });
-
-    if (res.ok) {
-      setStatus("Message sent!");
-      setForm({ name: "", email: "", message: "" });
-    } else {
-      setStatus("Failed to send.");
-    }
-  } catch {
-    setStatus("Failed to send.");
-  }
-};
-
-
   return (
     <section id="contact" className="bg-gray-950 py-16 px-6">
       <div className="max-w-7xl mx-auto">
