@@ -4,6 +4,7 @@ import Contact from './components/Contact'
 import Education from './components/Education'
 import Footer from './components/Footer'
 import Hero from './components/Hero'
+// import Internship from './components/Internship'
 import Navbar from './components/Navbar'
 // import Project from './components/Project'
 
@@ -14,6 +15,7 @@ const App = () => {
       <Hero/>
       <About/>
       <Education/>
+      {/* <Internship/> */}
       {/* <Project/> */}
       <Contact/>
       <Footer/>

@@ -7,7 +7,7 @@ import "../Css/Hero.css";
 
 // JavaScript function to redirect to Instagram
 function redirectToInstagram() {
-    window.open('https://www.instagram.com/it_chirru/', '_blank', 'noopener,noreferrer');
+    window.open('https://www.instagram.com/chir.ru_26t/', '_blank', 'noopener,noreferrer');
 }
 
 const Hero = () => {
