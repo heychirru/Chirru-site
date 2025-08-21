@@ -1,17 +1,20 @@
 const express = require("express");
 const cors = require("cors");
 const nodemailer = require("nodemailer");
-require("dotenv").config();
+require('dotenv').config({ silent: true })
 
 const app = express();
-app.use(cors({ origin:"https://chirru.netlify.app/"})); // For production, use: cors({ origin: "https://your-frontend-domain" })
+app.use(cors({
+  origin: ["http://localhost:5173", "https://chirru.netlify.app"],
+  credentials: true
+})); // Allow both local development and production
 app.use(express.json());
 
 app.get("/", (req, res) => {
   res.send(`
     <html>
       <head>
-        <title>API Status</title>
+        <title>Chirru</title>
         <style>
           body {
             display: flex;
@@ -20,15 +23,19 @@ app.get("/", (req, res) => {
             height: 100vh;
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #f8f9fa;
+            background:rgb(0, 0, 0);
           }
           h1 {
-            color: #333;
+            color: #ffffff;
+          }
+          h2 {
+            color: #ffffff;
           }
         </style>
       </head>
       <body>
         <h1>Your API is running👨‍💻, Go and Enjoy😊!</h1>
+        <h2>This is the Backend Server made By Chirru</h2>
         <style>
       </body>
     </html>
@@ -61,4 +68,4 @@ app.post("/api/contact", async (req, res) => {
 });
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(`Your Server Run On:"http://localhost:${PORT}"`));

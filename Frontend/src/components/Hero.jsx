@@ -37,19 +37,7 @@ function redirectToTwitter() {
 
 const Hero = () => {
   return (
-    <section className="h-max md:h-screen bg-gradient-to-l bg-gray-950 text-white flex flex-col justify-center items-center relative z-10 pb-10">
-      {/* stars */}
-      <div>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+    <section className="h-max md:h-screen bg-gray-950 dark:bg-gray-50 text-white dark:text-gray-800 flex flex-col justify-center items-center relative z-10 pb-10">
       <div className="max-w-7xl mt-24 mx-auto items-center flex flex-col md:flex-row gap-16 md:gap-40 justify-between">
         <div className="md:space-y-6 px-4">
           <motion.h1
@@ -73,7 +61,7 @@ const Hero = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.4, delay: 0.5 }}
             // onClick={Path2D = "/src/components/CV.pdf"}
-            className="px-3 py-2 flex items-center gap-2 bg-blue-500 rounded-md text-white hover:bg-blue-600 shadow-blue-500 border-2 border-blue-400 transition-all shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#33CCCC,0_0_15px_#33CCCC,0_0_30px_#33CCCC]"
+            className="px-3 py-2 flex items-center gap-2 bg-blue-500 rounded-md text-white hover:bg-blue-600 border-2 border-blue-400 transition-all"
           >
             <Download className="w-5 h-5" /> Download CV
           </motion.button>
@@ -104,7 +92,7 @@ const Hero = () => {
             transition={{ duration: 1.4, delay: 0 }}
             src={Profile}
             alt=""
-            className="rounded-full border border-blue-600 md:w-[500px] w-[300px] shadow-[0px_0px_20px_10px_rgba(0,0,0,0.3)] shadow-blue-500"
+            className="rounded-full border border-blue-600 md:w-[500px] w-[300px]"
           />
         </div>
       </div>

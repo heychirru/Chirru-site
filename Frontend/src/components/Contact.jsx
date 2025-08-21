@@ -64,20 +64,20 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="bg-gray-950 py-16 px-6">
+    <section id="contact" className="bg-gray-950 dark:bg-gray-50 py-16 px-6">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-5xl font-bold text-center text-gray-300 mb-12">
+        <h2 className="text-5xl font-bold text-center text-gray-300 dark:text-gray-800 mb-12">
           Contact Me
         </h2>
         <div className="grid lg:grid-cols-2 gap-10">
           {/* contact info */}
           <div className="flex flex-col justify-center space-y-8">
             <div>
-              <h1 className="text-4xl lg:text-6xl font-bold text-gray-300">
+              <h1 className="text-4xl lg:text-6xl font-bold text-gray-300 dark:text-gray-800">
                 Let's Talk
               </h1>
-              <h3 className="text-2xl font-semibold text-gray-300">Email</h3>
-              <p className="text-gray-600 mt-2">
+              <h3 className="text-2xl font-semibold text-gray-300 dark:text-gray-800">Email</h3>
+              <p className="text-gray-600 dark:text-gray-500 mt-2">
                 <a
                   href="#"
                   className="text-blue-500 hover:underline"
@@ -88,7 +88,7 @@ const Contact = () => {
               </p>
             </div>
             <div>
-              <h3 className="text-2xl font-semibold text-gray-300">
+              <h3 className="text-2xl font-semibold text-gray-300 dark:text-gray-800">
                 Follow Me
               </h3>
               <div className="flex gap-3 text-2xl transition-all mt-5">
@@ -112,15 +112,15 @@ const Contact = () => {
             </div>
           </div>
           {/* contact form */}
-          <div className="bg-gray-900 rounded-lg shadow-[0px_0px_20px_10px_rgba(0,0,0,0.3)] shadow-blue-500 p-8">
-            <h3 className="text-3xl font-semibold text-gray-300 mb-6">
+          <div className="bg-gray-900 dark:bg-white rounded-lg p-8 shadow-lg">
+            <h3 className="text-3xl font-semibold text-gray-300 dark:text-gray-800 mb-6">
               Get in Touch
             </h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-sm font-medium text-gray-300"
+                  className="block text-sm font-medium text-gray-300 dark:text-gray-700"
                 >
                   Name
                 </label>
@@ -130,7 +130,7 @@ const Contact = () => {
                   name="name"
                   value={form.name}
                   onChange={handleChange}
-                  className="mt-1 w-full p-3 border bg-gray-950 text-gray-300 border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                  className="mt-1 w-full p-3 border bg-gray-800 dark:bg-gray-50 text-gray-300 dark:text-gray-800 border-gray-300 dark:border-gray-400 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
                   placeholder="Your Name"
                   required
                 />
@@ -138,7 +138,7 @@ const Contact = () => {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-gray-300"
+                  className="block text-sm font-medium text-gray-300 dark:text-gray-700"
                 >
                   Email
                 </label>
@@ -148,7 +148,7 @@ const Contact = () => {
                   name="email"
                   value={form.email}
                   onChange={handleChange}
-                  className="mt-1 w-full p-3 border bg-gray-950 text-gray-300 border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                  className="mt-1 w-full p-3 border bg-gray-800 dark:bg-gray-50 text-gray-300 dark:text-gray-800 border-gray-300 dark:border-gray-400 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
                   placeholder="Your Email"
                   required
                 />
@@ -156,7 +156,7 @@ const Contact = () => {
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-sm font-medium text-gray-300"
+                  className="block text-sm font-medium text-gray-300 dark:text-gray-700"
                 >
                   Message
                 </label>
@@ -166,7 +166,7 @@ const Contact = () => {
                   rows={5}
                   value={form.message}
                   onChange={handleChange}
-                  className="mt-1 w-full p-3 border bg-gray-950 text-gray-300 border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                  className="mt-1 w-full p-3 border bg-gray-800 dark:bg-gray-50 text-gray-300 dark:text-gray-800 border-gray-300 dark:border-gray-400 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
                   placeholder="Your Message"
                   required
                 ></textarea>
@@ -177,7 +177,7 @@ const Contact = () => {
               >
                 Send Message
               </button>
-              {status && <p className="text-gray-300 mt-2">{status}</p>}
+              {status && <p className="text-gray-300 dark:text-gray-700 mt-2">{status}</p>}
             </form>
           </div>
         </div>

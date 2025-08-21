@@ -6,17 +6,17 @@ import Footer from './components/Footer'
 import Hero from './components/Hero'
 // import Internship from './components/Internship'
 import Navbar from './components/Navbar'
-// import Project from './components/Project'
+import Project from './components/Project'
 
 const App = () => {
   return (
-    <div className='overflow-hidden'>
+    <div className='overflow-hidden transition-colors duration-300'>
       <Navbar/>
       <Hero/>
       <About/>
       <Education/>
       {/* <Internship/> */}
-      {/* <Project/> */}
+      <Project/>
       <Contact/>
       <Footer/>
       <ScrollToTop smooth color='white' style={{backgroundColor: '#3BB2F6', display:'flex',alignItems:'center', justifyContent:'center'}}/>
