@@ -1,14 +1,21 @@
 import { motion } from "framer-motion";
 import { Download } from "lucide-react";
-import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import Profile from "../assets/profile.png";
 import "../Css/Hero.css";
 
 // JavaScript function to redirect to Socile Media IDs Links
+function redirectToGithub() {
+  window.open("https://github.com/heychirru", 
+  "_blank",
+  "noopener,noreferrer"
+);
+}
+
 function redirectToInstagram() {
   window.open(
-    "https://www.instagram.com/chir.ru_26t/?igsh=MTh3YWJ3eTY3eHNhdA==",
+    "https://www.instagram.com/chir.ru_26t/",
     "_blank",
     "noopener,noreferrer"
   );
@@ -24,20 +31,25 @@ function redirectToFacebook() {
 
 function redirectToLinkedIn() {
   window.open(
-    "https://www.linkedin.com/in/heychirru26?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "https://www.linkedin.com/in/heychirru26",
     "_blank",
     "noopener,noreferrer"
   );
 }
 
 function redirectToTwitter() {
-  window.open("https://x.com/chir_ru26", "_blank", "noopener,noreferrer");
+  window.open("https://x.com/chir_ru26",
+    "_blank",
+    "noopener,noreferrer"
+  );
 }
+
+
 
 
 const Hero = () => {
   return (
-    <section className="h-max md:h-screen bg-gray-950 dark:bg-gray-50 text-white dark:text-gray-800 flex flex-col justify-center items-center relative z-10 pb-10">
+    <section className="h-max md:h-screen bg-gray-950 text-white flex flex-col justify-center items-center relative z-10 pb-10">
       <div className="max-w-7xl mt-24 mx-auto items-center flex flex-col md:flex-row gap-16 md:gap-40 justify-between">
         <div className="md:space-y-6 px-4">
           <motion.h1
@@ -67,6 +79,10 @@ const Hero = () => {
           </motion.button>
           <div className="flex gap-3 text-2xl transition-all mt-5 md:mt-0">
             {/* Attach the JS function */}
+            <FaGithub
+              className="hover:text-blue-400 cursor-pointer"
+              onClick={redirectToGithub}
+            />
             <FaFacebook
               className="hover:text-blue-400"
               onClick={redirectToFacebook}

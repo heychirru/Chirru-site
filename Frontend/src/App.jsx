@@ -10,7 +10,7 @@ import Project from './components/Project'
 
 const App = () => {
   return (
-    <div className='overflow-hidden transition-colors duration-300'>
+    <div className='overflow-hidden'>
       <Navbar/>
       <Hero/>
       <About/>
@@ -19,7 +19,7 @@ const App = () => {
       <Project/>
       <Contact/>
       <Footer/>
-      <ScrollToTop smooth color='white' style={{backgroundColor: '#3BB2F6', display:'flex',alignItems:'center', justifyContent:'center'}}/>
+      <ScrollToTop smooth color='white' style={{backgroundColor: '#3BB2F6', display:'flex',alignItems: 'center', justifyContent:'center'}}/>
     </div>
   )
 }

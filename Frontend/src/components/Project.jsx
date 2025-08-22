@@ -48,7 +48,7 @@ const Project = () => {
   ];
 
   return (
-    <div id="projects" className="py-20 bg-gray-950 dark:bg-gray-50 z-50 text-gray-300 dark:text-gray-800">
+    <div id="projects" className="py-20 bg-gray-950 z-50 text-gray-300">
       <div className="max-w-7xl mx-auto px-4">
         <motion.h2 
           initial={{ opacity: 0, y: 50 }}
@@ -63,7 +63,7 @@ const Project = () => {
           {projects.map((project, index) => (
             <div
               key={project.id}
-              className={`bg-gray-900 dark:bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 ${
+              className={`bg-gray-900 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 ${
                 project.featured ? 'ring-2 ring-blue-500' : ''
               }`}
             >
@@ -76,11 +76,11 @@ const Project = () => {
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                   />
                 ) : (
-                  <div className="w-full h-full bg-gray-800 dark:bg-gray-100 flex items-center justify-center border-2 border-dashed border-gray-600 dark:border-gray-400">
-                    <div className="text-center text-gray-400 dark:text-gray-600">
+                  <div className="w-full h-full bg-gray-800 flex items-center justify-center border-2 border-dashed border-gray-600">
+                    <div className="text-center text-gray-400">
                       <div className="text-4xl mb-2">📱</div>
                       <div className="text-sm font-medium">{project.title}</div>
-                      <div className="text-xs text-gray-500 dark:text-gray-500">Project Screenshot</div>
+                      <div className="text-xs text-gray-500">Project Screenshot</div>
                     </div>
                   </div>
                 )}
@@ -93,11 +93,11 @@ const Project = () => {
               
               {/* Project Content */}
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-3 text-white dark:text-gray-800">{project.title}</h3>
-                <p className="text-gray-400 dark:text-gray-600 mb-4 leading-relaxed">{project.description}</p>
+                <h3 className="text-xl font-bold mb-3 text-white">{project.title}</h3>
+                <p className="text-gray-400 mb-4 leading-relaxed">{project.description}</p>
                 
                 {/* Technologies */}
-                <div className="mb-2 text-sm font-semibold text-gray-200 dark:text-gray-700">Technologies</div>
+                <div className="mb-2 text-sm font-semibold text-gray-200">Technologies</div>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {Array.isArray(project.technologies) && project.technologies.length > 0 ? (
                     project.technologies.filter(Boolean).map((tech, techIndex) => (
@@ -119,7 +119,7 @@ const Project = () => {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 bg-gray-800 dark:bg-gray-200 hover:bg-gray-700 dark:hover:bg-gray-300 text-white dark:text-gray-800 rounded-md transition-colors duration-200"
+                    className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 text-white rounded-md transition-colors duration-200"
                   >
                     <FaGithub className="w-4 h-4" />
                     Code
@@ -130,22 +130,25 @@ const Project = () => {
           ))}
         </div>
         
-        {/* Call to Action */}
+        {/* GitHub Profile Link */}
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
           className="text-center mt-12"
         >
-          <p className="text-lg text-gray-400 dark:text-gray-600 mb-6">
-            Interested in working together? Let's discuss your project!
+          <p className="text-lg text-gray-400 mb-6">
+            You can check rest of my projects in my{" "}
+            <a
+              href="https://github.com/heychirru?tab=repositories"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:text-blue-300 font-semibold transition-colors duration-200"
+            >
+              GitHub
+            </a>{" "}
+            profile
           </p>
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-md font-semibold transition-all duration-200"
-          >
-            Get In Touch
-          </a>
         </motion.div>
       </div>
     </div>
