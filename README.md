@@ -64,6 +64,7 @@ npm install
 node server.js
 ```
 
+📂 Project Structure:
 
 ```text
 Chirru-site/                     # Express backend (contact API)
