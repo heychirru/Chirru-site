@@ -2,6 +2,7 @@ import ScrollToTop from "react-scroll-to-top"
 import About from './components/About'
 import Contact from './components/Contact'
 import Education from './components/Education'
+import Skills from './components/Skills'
 import Footer from './components/Footer'
 import Hero from './components/Hero'
 // import Internship from './components/Internship'
@@ -15,6 +16,7 @@ const App = () => {
       <Hero/>
       <About/>
       <Education/>
+      <Skills />
       {/* <Internship/> */}
       <Project/>
       <Contact/>

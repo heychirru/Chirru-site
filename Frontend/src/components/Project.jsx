@@ -143,7 +143,7 @@ const Project = () => {
               href="https://github.com/heychirru?tab=repositories"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-400 hover:text-blue-300 font-semibold transition-colors duration-200"
+              className="text-orange-500 hover:text-orange-400 font-semibold transition-colors duration-200"
             >
               GitHub
             </a>{" "}

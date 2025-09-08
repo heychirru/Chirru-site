@@ -15,13 +15,14 @@ const internships = [
     icon: "👨‍💻",
   },
 
-  // {
-  //   role: "Internship at GWING Software Technologies",
-  //   company: "GWING Software Technologies",
-  //   duration: "24 May 2025 - 23 June 2025",
-  //   description: "Worked on backend development using Node.js and Express.",
-  //   icon: "💼
-  // }
+  {
+    role: "Internship at Navodita Infotech",
+    company: "Navodita Infotech",
+    duration: "25 July 2025 - 24 August 2025",
+    description: "Worked on Java Development. ",
+    icon: "👨‍💻",
+  }
+  
 ];
 
 const Internship = () => (
