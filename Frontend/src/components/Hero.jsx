@@ -3,6 +3,7 @@ import { Download } from "lucide-react";
 import { FaGithub, FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import Profile from "../assets/profile.png";
+import CV from "../assets/Resume/CV.pdf";
 import "../Css/Hero.css";
 
 // JavaScript function to redirect to Socile Media IDs Links
@@ -68,15 +69,17 @@ const Hero = () => {
           >
             Wanna be a Java Backend Developer
           </motion.p>
-          <motion.button
+
+          <a href={CV} target="_blank" rel="noopener noreferrer">
+            <motion.button
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.4, delay: 0.5 }}
-            // onClick={Path2D = "/src/components/CV.pdf"}
             className="px-3 py-2 flex items-center gap-2 bg-blue-500 rounded-md text-white hover:bg-blue-600 border-2 border-blue-400 transition-all"
           >
-            <Download className="w-5 h-5" /> Download CV
+            <Download className="w-5 h-5" /> View CV
           </motion.button>
+          </a>
           <div className="flex gap-3 text-2xl transition-all mt-5 md:mt-0">
             {/* Attach the JS function */}
             <FaGithub
