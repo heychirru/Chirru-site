@@ -1,5 +1,5 @@
 import { FaChevronRight } from "react-icons/fa";
-import AboutImg from "../assets/About.png";
+import AboutImg from "../assets/About.jpg";
 
 const About = () => {
   return (
@@ -10,11 +10,11 @@ const About = () => {
         </h2>
         <div className="flex flex-col md:flex-row gap-20 items-center">
           {/* img section */}
-          <div className="relative border hidden md:block border-blue-600 p-1 rounded-full bg-blue-500">
+          <div className="relative border hidden md:block border-blue-400 p-0.5 bg-blue-400">
             <img
               src={AboutImg}
               alt=""
-              className="w-[300px] md:w-[1500px] rounded-full border-blue-600 border"
+              className="w-[300px] md:w-[1500px] border-blue-500 border-[0.5px]"
             />
           </div>
           {/* paragraph section */}

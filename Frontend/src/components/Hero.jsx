@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Download } from "lucide-react";
 import { FaGithub, FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
-import Profile from "../assets/profile.png";
+import Profile from "../assets/profile.jpg";
 import CV from "../assets/Resume/CV.pdf";
 import "../Css/Hero.css";
 
@@ -111,7 +111,7 @@ const Hero = () => {
             transition={{ duration: 1.4, delay: 0 }}
             src={Profile}
             alt=""
-            className="rounded-full border border-blue-600 md:w-[500px] w-[300px]"
+            className="border border-blue-600 md:w-[500px] w-[300px] border-blue-400 rounded-full object-cover border-[2px]"
           />
         </div>
       </div>
