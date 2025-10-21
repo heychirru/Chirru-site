@@ -26,15 +26,15 @@ const Project = () => {
       github: "https://github.com/chirru26/Student-Grade-Tracker.git",
       featured: false
     },
-    //   id: 3,
-    //   title: "Weather Dashboard",
-    //   description: "A weather application that displays current weather conditions and forecasts using OpenWeatherMap API with beautiful visualizations.",
-    //   technologies: ["JavaScript", "HTML5", "CSS3", "Chart.js"],
-    //   image: WeatherImg,
-    //   github: "https://github.com",
-    //   live: "https://example.com",
-    //   featured: false
-    // },
+    {
+      id: 3,
+      title: "Weather Dashboard",
+      description: "A weather application that displays current weather conditions and forecasts using OpenWeatherMap API with beautiful visualizations.",
+      technologies: ["JavaScript", "HTML5", "CSS3", "Chart.js"],
+      image: false,
+      github: false,
+      featured: false
+    },
     // {
     //   id: 4,
     //   title: "Portfolio Website",
