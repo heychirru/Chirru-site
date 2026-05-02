@@ -24,6 +24,7 @@ const Navbar = () => {
             <a href="#projects"><li className='cursor-pointer'>Projects</li></a>
             <a href="#education"><li className='cursor-pointer'>Education </li></a>
             <a href="#contact"><button className='px-3 py-1 cursor-pointer rounded-md bg-blue-500 text-white flex items-center gap-1 shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#33CCCC,0_0_15px_#33CCCC,0_0_30px_#33CCCC] shadow-blue-500 border-blue-400 border-2'>Contact<FaChevronRight /></button></a>
+            <a href="/admin"><li className='cursor-pointer text-blue-400'>Admin</li></a>
           </ul>
         </nav>
         <div className='md:hidden text-white text-4xl'>
