@@ -3,7 +3,6 @@ import { Download } from "lucide-react";
 import { FaGithub, FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import Profile from "../assets/profile.jpg";
-import CV from "../assets/Resume/CV.pdf";
 import "../Css/Hero.css";
 
 // JavaScript function to redirect to Socile Media IDs Links
@@ -71,7 +70,7 @@ const Hero = () => {
           </motion.p>
 
           <a href={CV} target="_blank" rel="noopener noreferrer">
-            <motion.button
+            <a href="https://docs.chirru.in/api/v2/portfolio/resume" target="_blank" rel="noopener noreferrer"> 
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.4, delay: 0.5 }}
